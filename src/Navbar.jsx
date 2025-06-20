@@ -1,8 +1,12 @@
 import React from "react";
 import { FaUserCircle } from "react-icons/fa";
 import healthwayLogo from "./healthway.jpg";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+
+ const navigate = useNavigate();
+
   return (
     <nav className="fixed top-0 w-full z-50 flex justify-between items-center bg-teal-900 py-4 px-6 text-white shadow-md">
       
@@ -21,19 +25,19 @@ const Navbar = () => {
       {/* Right: Buttons + Profile */}
       <div className="flex items-center gap-6">
         <div className="flex space-x-4">
-          <button className="bg-white hover:bg-sky-100 px-4 py-2 text-sm hover:font-bold text-black rounded-full cursor-pointer">
+          <button className="bg-white hover:bg-sky-100 px-4 py-2 text-sm hover:font-bold text-black rounded-full cursor-pointer" onClick={() => navigate("/signin")}>
             Sign in
           </button>
-          <button className="bg-red-600 hover:bg-red-700 px-4 py-2 text-sm hover:font-bold text-white rounded-full cursor-pointer">
+          <button className="bg-red-600 hover:bg-red-700 px-4 py-2 text-sm hover:font-bold text-white rounded-full cursor-pointer" onClick={() => navigate("/emergency")}>
             Emergency
           </button>
         </div>
 
-        <div className="flex flex-col items-center cursor-pointer">
-          <FaUserCircle
-            size={32}
-            className="text-white hover:text-sky-100 transition duration-300"
-          />
+      <div
+          className="flex flex-col items-center cursor-pointer"
+          onClick={() => navigate("/profile")}
+        >
+          <FaUserCircle size={32} className="text-white hover:text-sky-100 transition duration-300" />
           <span className="text-xs font-bold text-white">Unknown</span>
         </div>
       </div>

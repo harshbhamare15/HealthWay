@@ -1,4 +1,5 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import LeftSidebar from "./LeftSidebar";
@@ -7,6 +8,7 @@ import isolated from "./isolated.jpg";
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
   const [filter, setFilter] = useState("All");
+  const navigate = useNavigate();
 
   return (
     <div className="bg-gray-100 min-h-screen flex flex-col">
@@ -34,9 +36,7 @@ function App() {
           <div className="flex justify-center items-center w-full md:w-3/4 mx-auto">
             <button
               className="bg-teal-700 hover:bg-teal-800 text-black cursor-pointer hover:font-semibold px-25 py-2 my-8 rounded shadow-md transition duration-200"
-              onClick={() => {
-                console.log("Register button clicked");
-              }}
+              onClick={() => navigate("/register")}
             >
               Register
             </button>
