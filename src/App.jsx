@@ -4,11 +4,21 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import LeftSidebar from "./LeftSidebar";
 import isolated from "./isolated.jpg";
+import { motion } from "framer-motion";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
   const [filter, setFilter] = useState("All");
   const navigate = useNavigate();
+
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
 
   return (
     <div className="bg-gray-100 min-h-screen flex flex-col">
@@ -19,10 +29,12 @@ function App() {
       {/* Main Scrollable Content */}
       <div className="flex-1 overflow-auto">
         {/* Background section with Welcome and Search */}
-        <section
+        <motion.section
           className="w-full h-screen bg-cover bg-center flex flex-col justify-center items-center text-center px-4 opacity-300"
           style={{ backgroundImage: `url(${isolated})` }}
-        >
+          variants={fadeInUp}
+          initial="hidden"
+          animate="visible">
           <h1 className="text-4xl md:text-5xl font-bold text-black drop-shadow-lg mb-6">
             Welcome to HealthWay
           </h1>
@@ -35,13 +47,13 @@ function App() {
           </p>
           <div className="flex justify-center items-center w-full md:w-3/4 mx-auto">
             <button
-              className="bg-teal-700 hover:bg-teal-800 text-black cursor-pointer hover:font-semibold px-25 py-2 my-8 rounded shadow-md transition duration-200"
+              className="bg-teal-700 hover:bg-teal-800 text-black hover:font-semibold px-25 py-2 my-8 rounded shadow-md transition duration-200 cursor-pointer"
               onClick={() => navigate("/register")}
             >
               Register
             </button>
           </div>
-        </section>
+        </motion.section>
         <hr className="border-t-2 border-black-800 my-0 w-full" />
 
         {/* Feature Section */}
@@ -51,7 +63,13 @@ function App() {
           </h2>
 
           <div className="flex flex-col gap-6">
-            <div className="bg-blue-100 p-6 rounded-xl shadow">
+            <motion.div
+              className="bg-blue-100 p-6 rounded-xl shadow"
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ amount: 0.3, once: false }}
+            >
               <h3 className="text-xl font-semibold text-blue-900 mb-2">
                 Patient Check-in & Queue System
               </h3>
@@ -67,11 +85,17 @@ function App() {
                 experience that minimizes wait-related stress and improves
                 operational flow from the moment a patient enters the facility.
               </p>
-            </div>
+            </motion.div>
 
             <hr className="border-t-2 border-black-800 my-0 w-full" />
 
-            <div className="bg-green-100 p-6 rounded-xl shadow">
+            <motion.div
+              className="bg-green-100 p-6 rounded-xl shadow"
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ amount: 0.3, once: false }}
+            >
               <h3 className="text-xl font-semibold text-green-900 mb-2">
                 Real-time Doctor Availability
               </h3>
@@ -85,11 +109,17 @@ function App() {
                 optimal use of medical resources and significantly reducing
                 unnecessary delays or confusion in the consultation process.
               </p>
-            </div>
+            </motion.div>
 
             <hr className="border-t-2 border-black-800 my-0 w-full" />
 
-            <div className="bg-red-100 p-6 rounded-xl shadow">
+            <motion.div
+              className="bg-red-100 p-6 rounded-xl shadow"
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ amount: 0.3, once: false }}
+            >
               <h3 className="text-xl font-semibold text-red-900 mb-2">
                 AI-enabled Emergency Prioritization
               </h3>
@@ -104,11 +134,17 @@ function App() {
                 other patients, improving response times and overall safety
                 within the healthcare environment.
               </p>
-            </div>
+            </motion.div>
 
             <hr className="border-t-2 border-black-800 my-0 w-full" />
 
-            <div className="bg-yellow-100 p-6 rounded-xl shadow">
+            <motion.div
+              className="bg-yellow-100 p-6 rounded-xl shadow"
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ amount: 0.3, once: false }}
+            >
               <h3 className="text-xl font-semibold text-yellow-900 mb-2">
                 Automated Notifications
               </h3>
@@ -122,11 +158,17 @@ function App() {
                 changes in doctor availability, enabling quicker response and
                 smoother coordination across departments.
               </p>
-            </div>
+            </motion.div>
 
             <hr className="border-t-2 border-black-800 my-0 w-full" />
 
-            <div className="bg-purple-100 p-6 rounded-xl shadow">
+            <motion.div
+              className="bg-purple-100 p-6 rounded-xl shadow"
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ amount: 0.3, once: false }}
+            >
               <h3 className="text-xl font-semibold text-purple-900 mb-2">
                 Analytics & Bottleneck Reports
               </h3>
@@ -141,11 +183,17 @@ function App() {
                 operations, and implement targeted improvements that enhance the
                 overall patient experience.
               </p>
-            </div>
+            </motion.div>
 
             <hr className="border-t-2 border-black-800 my-0 w-full" />
 
-            <div className="bg-teal-100 p-6 rounded-xl shadow">
+            <motion.div
+              className="bg-teal-100 p-6 rounded-xl shadow"
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ amount: 0.3, once: false }}
+            >
               <h3 className="text-xl font-semibold text-teal-900 mb-2">
                 The Heartbeat of Everyday Healthcare
               </h3>
@@ -160,7 +208,7 @@ function App() {
                 partner—bridging the gap between clinical care and home
                 recovery.
               </p>
-            </div>
+            </motion.div>
 
             <hr className="border-t-2 border-black-800 my-0 w-full" />
           </div>

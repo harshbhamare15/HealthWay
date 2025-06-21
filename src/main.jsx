@@ -16,6 +16,8 @@ import HealthHistory from "./HealthHistory";
 import MedicalStore from "./MedicalStore";
 import Calendar from "./Calendar";
 import AISuggestions from "./AISuggestions";
+import EditProfile from "./EditProfile";
+import Settings from "./Settings";
 import "./index.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -29,6 +31,8 @@ root.render(
         <Route path="/signin" element={<SignIn />} />
         <Route path="/emergency" element={<Emergency />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/edit-profile" element={<EditProfile />} />
+        <Route path="/settings" element={<Settings />} />
         <Route path="/" element={<Home />} />
         <Route path="/waiting-period" element={<WaitingPeriod />} />
         <Route path="/doctor-rating" element={<DoctorRating />} />
