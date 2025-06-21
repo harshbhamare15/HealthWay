@@ -7,6 +7,15 @@ import SignIn from "./SignIn";
 import Emergency from "./Emergency";
 import Profile from "./Profile";
 import Home from "./Home";
+import WaitingPeriod from "./WaitingPeriod";
+import DoctorRating from "./DoctorRating";
+import LocateHospital from "./LocateHospital";
+import HospitalDistance from "./HospitalDistance";
+import DoctorAvailability from "./DoctorAvailability";
+import HealthHistory from "./HealthHistory";
+import MedicalStore from "./MedicalStore";
+import Calendar from "./Calendar";
+import AISuggestions from "./AISuggestions";
 import "./index.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -21,6 +30,15 @@ root.render(
         <Route path="/emergency" element={<Emergency />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/" element={<Home />} />
+        <Route path="/waiting-period" element={<WaitingPeriod />} />
+        <Route path="/doctor-rating" element={<DoctorRating />} />
+        <Route path="/locate-hospital" element={<LocateHospital />} />
+        <Route path="/hospital-distance" element={<HospitalDistance />} />
+        <Route path="/doctor-availability" element={<DoctorAvailability />} />
+        <Route path="/health-history" element={<HealthHistory />} />
+        <Route path="/medical-store" element={<MedicalStore />} />
+        <Route path="/calendar" element={<Calendar />} />
+        <Route path="/ai-suggestions" element={<AISuggestions />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

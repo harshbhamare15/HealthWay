@@ -7,10 +7,10 @@ import LeftSidebar from "./LeftSidebar";
 function Profile() {
   const user = {
     name: "User Name",
-    dob: "Registerd DOB",
-    email: "Registerd Email",
-    phone: "Registerd Number",
-    gender: "Selected",
+    dob: "-----------------------",
+    email: "-----------------------",
+    phone: "-----------------------",
+    gender: "-----------------------",
   };
 
   // Button handlers (optional now)
