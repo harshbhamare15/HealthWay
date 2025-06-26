@@ -18,6 +18,8 @@ import Calendar from "./Calendar";
 import AISuggestions from "./AISuggestions";
 import EditProfile from "./EditProfile";
 import Settings from "./Settings";
+import FinalBook from "./FinalBook";
+// import OtherComponent from "./OtherComponent";
 import "./index.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -43,6 +45,7 @@ root.render(
         <Route path="/medical-store" element={<MedicalStore />} />
         <Route path="/calendar" element={<Calendar />} />
         <Route path="/ai-suggestions" element={<AISuggestions />} />
+        <Route path="/finalbook" element={<FinalBook />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

@@ -19,21 +19,47 @@ const WaitingPeriod = () => {
   ];
 
   return (
-    <div>
-        <Navbar/>
-        <LeftSidebar/>
-      <div className="max-w-2xl mx-auto p-15 mt-8">
-      <h1 className="text-4xl font-bold text-center mb-6 text-teal-800">🕒 Hospital Waiting Periods</h1>
-      <ul className="space-y-5 ">
-        {waitList.map((item, i) => (
-          <li key={i} className="border-b pb-4">
-            <strong>{item.title}:</strong> {item.time}
-          </li>
-        ))}
-      </ul>
+    <div className="flex flex-col min-h-screen bg-gray-100">
+      <Navbar />
+      <div className="flex flex-1 p-18">
+        <LeftSidebar />
+        <main className="flex-1 p-6 sm:p-10">
+          <div className="max-w-4xl mx-auto">
+            <h1 className="text-3xl sm:text-4xl font-bold text-teal-800 mb-8 flex items-center justify-center gap-3">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                className="w-8 h-8 sm:w-10 sm:h-10"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                />
+              </svg>
+              <span>Hospital Waiting Periods</span>
+            </h1>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {waitList.map((item, index) => (
+                <div
+                  key={index}
+                  className="bg-white p-6 rounded-2xl shadow-md border border-gray-200 hover:shadow-lg transition duration-300"
+                >
+                  <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-gray-600">{item.time}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </main>
+      </div>
     </div>
-    </div>
-    
   );
 };
 
