@@ -1,11 +1,9 @@
-import React from 'react';
+import React from "react";
 
 const Footer = () => {
   return (
     <footer className="bg-teal-900 text-white py-8 mt-auto">
       <div className="max-w-7xl mx-auto px-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 text-sm">
-        
-        {/* About */}
         <div>
           <h3 className="font-bold text-lg mb-2">About</h3>
           <ul className="space-y-1">
@@ -17,7 +15,6 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Patient Resources */}
         <div>
           <h3 className="font-bold text-lg mb-2">Patient Resources</h3>
           <ul className="space-y-1">
@@ -29,7 +26,6 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Services */}
         <div>
           <h3 className="font-bold text-lg mb-2">Departments & Services</h3>
           <ul className="space-y-1">
@@ -41,7 +37,6 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Legal */}
         <div>
           <h3 className="font-bold text-lg mb-2">Legal & Policies</h3>
           <ul className="space-y-1">
@@ -53,7 +48,6 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Connect */}
         <div>
           <h3 className="font-bold text-lg mb-2">Connect With Us</h3>
           <ul className="space-y-1">

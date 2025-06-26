@@ -5,7 +5,7 @@ import Navbar from "./Navbar";
 function Emergency() {
   return (
     <div className="flex">
-      <Navbar/>
+      <Navbar />
       <LeftSidebar />
 
       <div className="flex-grow flex flex-col items-center justify-center min-h-screen bg-white text-center px-4 ml-16">

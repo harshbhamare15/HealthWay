@@ -43,7 +43,7 @@ const HealthHistory = () => {
             strokeWidth="1.5"
             stroke="currentColor"
             className="w-9 h-9"
-            style={{ verticalAlign: 'middle' }}
+            style={{ verticalAlign: "middle" }}
           >
             <path
               strokeLinecap="round"
@@ -57,10 +57,18 @@ const HealthHistory = () => {
         <ul className="space-y-4">
           {healthHistory.map((entry, i) => (
             <li key={i} className="border-b pb-3">
-              <div className="font-semibold text-gray-800">Date: {entry.date}</div>
-              <div className="text-sm text-gray-600">Diagnosis: {entry.diagnosis}</div>
-              <div className="text-sm text-blue-600">Treatment: {entry.treatment}</div>
-              <div className="text-sm text-gray-500">Doctor: {entry.doctor}</div>
+              <div className="font-semibold text-gray-800">
+                Date: {entry.date}
+              </div>
+              <div className="text-sm text-gray-600">
+                Diagnosis: {entry.diagnosis}
+              </div>
+              <div className="text-sm text-blue-600">
+                Treatment: {entry.treatment}
+              </div>
+              <div className="text-sm text-gray-500">
+                Doctor: {entry.doctor}
+              </div>
             </li>
           ))}
         </ul>

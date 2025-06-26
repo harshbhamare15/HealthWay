@@ -13,7 +13,7 @@ import {
   BugAntIcon,
   BoltIcon,
   MinusIcon,
-  PlusIcon
+  PlusIcon,
 } from "@heroicons/react/24/outline";
 import { CheckCircleIcon } from "@heroicons/react/24/solid";
 
@@ -32,50 +32,250 @@ const categoryIcons = {
   "Dermatology / Antifungal": BeakerIcon,
   "Dermatology / Anti-inflammatory": BoltIcon,
   "Antiviral / Flu": BugAntIcon,
-  default: CubeIcon
+  default: CubeIcon,
 };
 
 const medicines = [
-  { name: "Paracetamol 500mg", category: "Pain Relief / Fever", availability: "In Stock", price: "₹25 / strip" },
-  { name: "Amoxicillin 250mg", category: "Antibiotic", availability: "Limited Stock", price: "₹58 / strip" },
-  { name: "Ibuprofen 400mg", category: "Pain Relief / Anti-inflammatory", availability: "In Stock", price: "₹30 / strip" },
-  { name: "Cetirizine", category: "Anti-Allergic", availability: "In Stock", price: "₹15 / strip" },
-  { name: "Metformin 500mg", category: "Diabetes", availability: "Out of Stock", price: "₹40 / strip" },
-  { name: "Amlodipine 5mg", category: "Hypertension", availability: "In Stock", price: "₹22 / strip" },
-  { name: "Losartan 50mg", category: "Hypertension", availability: "Limited Stock", price: "₹24 / strip" },
-  { name: "Atorvastatin 10mg", category: "Cholesterol", availability: "In Stock", price: "₹33 / strip" },
-  { name: "Salbutamol Inhaler", category: "Asthma / Respiratory", availability: "In Stock", price: "₹120 / unit" },
-  { name: "Pantoprazole 40mg", category: "Acidity / GERD", availability: "In Stock", price: "₹35 / strip" },
-  { name: "Ranitidine 150mg", category: "Antacid", availability: "Limited Stock", price: "₹18 / strip" },
-  { name: "Loratadine", category: "Anti-Allergic", availability: "In Stock", price: "₹20 / strip" },
-  { name: "Clotrimazole Cream", category: "Dermatology / Antifungal", availability: "In Stock", price: "₹45 / tube" },
-  { name: "Hydrocortisone Cream", category: "Dermatology / Anti-inflammatory", availability: "Limited Stock", price: "₹60 / tube" },
-  { name: "Oseltamivir 75mg", category: "Antiviral / Flu", availability: "Out of Stock", price: "₹130 / strip" },
-  { name: "Dolo 650", category: "Pain Relief / Fever", availability: "In Stock", price: "₹28 / strip" },
-  { name: "Azithromycin 500mg", category: "Antibiotic", availability: "Limited Stock", price: "₹70 / strip" },
-  { name: "Montelukast", category: "Anti-Allergic / Respiratory", availability: "In Stock", price: "₹55 / strip" },
-  { name: "Glimepiride 1mg", category: "Diabetes", availability: "In Stock", price: "₹32 / strip" },
-  { name: "Telmisartan 40mg", category: "Hypertension", availability: "In Stock", price: "₹42 / strip" },
-  { name: "Rabeprazole 20mg", category: "Acidity / GERD", availability: "In Stock", price: "₹36 / strip" },
-  { name: "Levocetirizine", category: "Anti-Allergic", availability: "In Stock", price: "₹25 / strip" },
-  { name: "Thyroxine 50mcg", category: "Thyroid", availability: "In Stock", price: "₹18 / strip" },
-  { name: "Calcium Carbonate", category: "Bone Health", availability: "In Stock", price: "₹22 / strip" },
-  { name: "Vitamin D3 60K", category: "Bone Health", availability: "In Stock", price: "₹55 / tablet" },
-  { name: "Iron Folic Acid", category: "Supplements", availability: "Limited Stock", price: "₹30 / strip" },
-  { name: "Cetirizine Syrup", category: "Anti-Allergic", availability: "In Stock", price: "₹25 / bottle" },
-  { name: "Chlorpheniramine Maleate", category: "Anti-Allergic", availability: "In Stock", price: "₹20 / strip" },
-  { name: "Naproxen 250mg", category: "Pain Relief / Anti-inflammatory", availability: "In Stock", price: "₹34 / strip" },
-  { name: "Domperidone 10mg", category: "Digestive Health", availability: "In Stock", price: "₹28 / strip" },
-  { name: "Ondansetron 4mg", category: "Digestive Health", availability: "Limited Stock", price: "₹42 / strip" },
-  { name: "Cefixime 200mg", category: "Antibiotic", availability: "Out of Stock", price: "₹58 / strip" },
-  { name: "Erythromycin", category: "Antibiotic", availability: "In Stock", price: "₹52 / strip" },
-  { name: "Albuterol Inhaler", category: "Asthma / Respiratory", availability: "In Stock", price: "₹135 / unit" },
-  { name: "Itraconazole", category: "Dermatology / Antifungal", availability: "Limited Stock", price: "₹95 / strip" },
-  { name: "Fluconazole", category: "Dermatology / Antifungal", availability: "In Stock", price: "₹48 / strip" },
-  { name: "Isosorbide Mononitrate", category: "Cardiac", availability: "In Stock", price: "₹66 / strip" },
-  { name: "Aspirin 75mg", category: "Cardiac", availability: "In Stock", price: "₹18 / strip" },
-  { name: "Furosemide", category: "Diuretic", availability: "Limited Stock", price: "₹25 / strip" },
-  { name: "Metronidazole", category: "Antibiotic", availability: "In Stock", price: "₹20 / strip" }
+  {
+    name: "Paracetamol 500mg",
+    category: "Pain Relief / Fever",
+    availability: "In Stock",
+    price: "₹25 / strip",
+  },
+  {
+    name: "Amoxicillin 250mg",
+    category: "Antibiotic",
+    availability: "Limited Stock",
+    price: "₹58 / strip",
+  },
+  {
+    name: "Ibuprofen 400mg",
+    category: "Pain Relief / Anti-inflammatory",
+    availability: "In Stock",
+    price: "₹30 / strip",
+  },
+  {
+    name: "Cetirizine",
+    category: "Anti-Allergic",
+    availability: "In Stock",
+    price: "₹15 / strip",
+  },
+  {
+    name: "Metformin 500mg",
+    category: "Diabetes",
+    availability: "Out of Stock",
+    price: "₹40 / strip",
+  },
+  {
+    name: "Amlodipine 5mg",
+    category: "Hypertension",
+    availability: "In Stock",
+    price: "₹22 / strip",
+  },
+  {
+    name: "Losartan 50mg",
+    category: "Hypertension",
+    availability: "Limited Stock",
+    price: "₹24 / strip",
+  },
+  {
+    name: "Atorvastatin 10mg",
+    category: "Cholesterol",
+    availability: "In Stock",
+    price: "₹33 / strip",
+  },
+  {
+    name: "Salbutamol Inhaler",
+    category: "Asthma / Respiratory",
+    availability: "In Stock",
+    price: "₹120 / unit",
+  },
+  {
+    name: "Pantoprazole 40mg",
+    category: "Acidity / GERD",
+    availability: "In Stock",
+    price: "₹35 / strip",
+  },
+  {
+    name: "Ranitidine 150mg",
+    category: "Antacid",
+    availability: "Limited Stock",
+    price: "₹18 / strip",
+  },
+  {
+    name: "Loratadine",
+    category: "Anti-Allergic",
+    availability: "In Stock",
+    price: "₹20 / strip",
+  },
+  {
+    name: "Clotrimazole Cream",
+    category: "Dermatology / Antifungal",
+    availability: "In Stock",
+    price: "₹45 / tube",
+  },
+  {
+    name: "Hydrocortisone Cream",
+    category: "Dermatology / Anti-inflammatory",
+    availability: "Limited Stock",
+    price: "₹60 / tube",
+  },
+  {
+    name: "Oseltamivir 75mg",
+    category: "Antiviral / Flu",
+    availability: "Out of Stock",
+    price: "₹130 / strip",
+  },
+  {
+    name: "Dolo 650",
+    category: "Pain Relief / Fever",
+    availability: "In Stock",
+    price: "₹28 / strip",
+  },
+  {
+    name: "Azithromycin 500mg",
+    category: "Antibiotic",
+    availability: "Limited Stock",
+    price: "₹70 / strip",
+  },
+  {
+    name: "Montelukast",
+    category: "Anti-Allergic / Respiratory",
+    availability: "In Stock",
+    price: "₹55 / strip",
+  },
+  {
+    name: "Glimepiride 1mg",
+    category: "Diabetes",
+    availability: "In Stock",
+    price: "₹32 / strip",
+  },
+  {
+    name: "Telmisartan 40mg",
+    category: "Hypertension",
+    availability: "In Stock",
+    price: "₹42 / strip",
+  },
+  {
+    name: "Rabeprazole 20mg",
+    category: "Acidity / GERD",
+    availability: "In Stock",
+    price: "₹36 / strip",
+  },
+  {
+    name: "Levocetirizine",
+    category: "Anti-Allergic",
+    availability: "In Stock",
+    price: "₹25 / strip",
+  },
+  {
+    name: "Thyroxine 50mcg",
+    category: "Thyroid",
+    availability: "In Stock",
+    price: "₹18 / strip",
+  },
+  {
+    name: "Calcium Carbonate",
+    category: "Bone Health",
+    availability: "In Stock",
+    price: "₹22 / strip",
+  },
+  {
+    name: "Vitamin D3 60K",
+    category: "Bone Health",
+    availability: "In Stock",
+    price: "₹55 / tablet",
+  },
+  {
+    name: "Iron Folic Acid",
+    category: "Supplements",
+    availability: "Limited Stock",
+    price: "₹30 / strip",
+  },
+  {
+    name: "Cetirizine Syrup",
+    category: "Anti-Allergic",
+    availability: "In Stock",
+    price: "₹25 / bottle",
+  },
+  {
+    name: "Chlorpheniramine Maleate",
+    category: "Anti-Allergic",
+    availability: "In Stock",
+    price: "₹20 / strip",
+  },
+  {
+    name: "Naproxen 250mg",
+    category: "Pain Relief / Anti-inflammatory",
+    availability: "In Stock",
+    price: "₹34 / strip",
+  },
+  {
+    name: "Domperidone 10mg",
+    category: "Digestive Health",
+    availability: "In Stock",
+    price: "₹28 / strip",
+  },
+  {
+    name: "Ondansetron 4mg",
+    category: "Digestive Health",
+    availability: "Limited Stock",
+    price: "₹42 / strip",
+  },
+  {
+    name: "Cefixime 200mg",
+    category: "Antibiotic",
+    availability: "Out of Stock",
+    price: "₹58 / strip",
+  },
+  {
+    name: "Erythromycin",
+    category: "Antibiotic",
+    availability: "In Stock",
+    price: "₹52 / strip",
+  },
+  {
+    name: "Albuterol Inhaler",
+    category: "Asthma / Respiratory",
+    availability: "In Stock",
+    price: "₹135 / unit",
+  },
+  {
+    name: "Itraconazole",
+    category: "Dermatology / Antifungal",
+    availability: "Limited Stock",
+    price: "₹95 / strip",
+  },
+  {
+    name: "Fluconazole",
+    category: "Dermatology / Antifungal",
+    availability: "In Stock",
+    price: "₹48 / strip",
+  },
+  {
+    name: "Isosorbide Mononitrate",
+    category: "Cardiac",
+    availability: "In Stock",
+    price: "₹66 / strip",
+  },
+  {
+    name: "Aspirin 75mg",
+    category: "Cardiac",
+    availability: "In Stock",
+    price: "₹18 / strip",
+  },
+  {
+    name: "Furosemide",
+    category: "Diuretic",
+    availability: "Limited Stock",
+    price: "₹25 / strip",
+  },
+  {
+    name: "Metronidazole",
+    category: "Antibiotic",
+    availability: "In Stock",
+    price: "₹20 / strip",
+  },
 ];
 
 const PAGE_SIZE = 10;
@@ -86,13 +286,17 @@ const MedicalStore = () => {
   const [givenMedicines, setGivenMedicines] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
 
-  const filtered = medicines.filter((med) =>
-    (med.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      med.category.toLowerCase().includes(searchTerm.toLowerCase())) &&
-    (categoryFilter ? med.category === categoryFilter : true)
+  const filtered = medicines.filter(
+    (med) =>
+      (med.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        med.category.toLowerCase().includes(searchTerm.toLowerCase())) &&
+      (categoryFilter ? med.category === categoryFilter : true)
   );
 
-  const paginated = filtered.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
+  const paginated = filtered.slice(
+    (currentPage - 1) * PAGE_SIZE,
+    currentPage * PAGE_SIZE
+  );
   const totalPages = Math.ceil(filtered.length / PAGE_SIZE);
 
   const giveMedicineToPatient = (med) => {
@@ -165,7 +369,10 @@ const MedicalStore = () => {
           {paginated.map((med, i) => {
             const Icon = categoryIcons[med.category] || categoryIcons.default;
             return (
-              <li key={i} className="border-b pb-3 flex justify-between items-start">
+              <li
+                key={i}
+                className="border-b pb-3 flex justify-between items-start"
+              >
                 <div>
                   <div className="font-semibold text-gray-800 flex items-center gap-3">
                     <div className="p-2 bg-white rounded-full border shadow">
@@ -173,7 +380,9 @@ const MedicalStore = () => {
                     </div>
                     {med.name}
                   </div>
-                  <div className="text-sm text-gray-600">Category: {med.category}</div>
+                  <div className="text-sm text-gray-600">
+                    Category: {med.category}
+                  </div>
                   <div
                     className={`text-sm ${
                       med.availability === "Out of Stock"
@@ -185,7 +394,9 @@ const MedicalStore = () => {
                   >
                     {med.availability}
                   </div>
-                  <div className="text-sm text-blue-600">Price: {med.price}</div>
+                  <div className="text-sm text-blue-600">
+                    Price: {med.price}
+                  </div>
                 </div>
                 <button
                   onClick={() => giveMedicineToPatient(med)}
@@ -196,7 +407,9 @@ const MedicalStore = () => {
                       : "bg-green-600 text-white hover:bg-green-700"
                   }`}
                 >
-                  {med.availability === "Out of Stock" ? "Not Available" : "Give to Patient"}
+                  {med.availability === "Out of Stock"
+                    ? "Not Available"
+                    : "Give to Patient"}
                 </button>
               </li>
             );
@@ -234,8 +447,8 @@ const MedicalStore = () => {
                   className="border p-3 rounded text-sm bg-gray-50 flex justify-between items-center"
                 >
                   <span>
-                    <span className="font-bold text-gray-800">{med.name}</span> –{" "}
-                    <span className="text-gray-600">{med.category}</span> –{" "}
+                    <span className="font-bold text-gray-800">{med.name}</span>{" "}
+                    – <span className="text-gray-600">{med.category}</span> –{" "}
                     <span className="text-blue-600">{med.price}</span>
                   </span>
                   <div className="flex items-center gap-2">
@@ -264,7 +477,7 @@ const MedicalStore = () => {
                 alert("Order confirmed!");
                 setGivenMedicines([]);
               }}
-                           className="mt-4 bg-teal-600 text-white px-6 py-2 rounded hover:bg-teal-700 transition cursor-pointer"
+              className="mt-4 bg-teal-600 text-white px-6 py-2 rounded hover:bg-teal-700 transition cursor-pointer"
             >
               Confirm Order
             </button>

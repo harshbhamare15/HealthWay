@@ -8,10 +8,8 @@ import Emergency from "./Emergency";
 import Profile from "./Profile";
 import Home from "./Home";
 import WaitingPeriod from "./WaitingPeriod";
-import DoctorRating from "./DoctorRating";
 import LocateHospital from "./LocateHospital";
 import HospitalDistance from "./HospitalDistance";
-import DoctorAvailability from "./DoctorAvailability";
 import HealthHistory from "./HealthHistory";
 import MedicalStore from "./MedicalStore";
 import Calendar from "./Calendar";
@@ -19,7 +17,6 @@ import AISuggestions from "./AISuggestions";
 import EditProfile from "./EditProfile";
 import Settings from "./Settings";
 import FinalBook from "./FinalBook";
-// import OtherComponent from "./OtherComponent";
 import "./index.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -37,10 +34,8 @@ root.render(
         <Route path="/settings" element={<Settings />} />
         <Route path="/" element={<Home />} />
         <Route path="/waiting-period" element={<WaitingPeriod />} />
-        <Route path="/doctor-rating" element={<DoctorRating />} />
         <Route path="/locate-hospital" element={<LocateHospital />} />
         <Route path="/hospital-distance" element={<HospitalDistance />} />
-        <Route path="/doctor-availability" element={<DoctorAvailability />} />
         <Route path="/health-history" element={<HealthHistory />} />
         <Route path="/medical-store" element={<MedicalStore />} />
         <Route path="/calendar" element={<Calendar />} />

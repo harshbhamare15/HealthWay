@@ -56,7 +56,7 @@ function Settings() {
       <Navbar />
       <LeftSidebar />
 
-        <div className="bg-white w-full ml-16 px-6 py-28"> 
+      <div className="bg-white w-full ml-16 px-6 py-28">
         <h1 className="text-3xl font-semibold mb-10 border-b pb-4">Settings</h1>
 
         <div className="max-w-3xl mx-auto divide-y">
@@ -66,7 +66,9 @@ function Settings() {
               className="flex justify-between items-center py-6 hover:bg-gray-50 transition"
             >
               <div>
-                <h2 className="text-lg font-medium text-gray-800">{item.title}</h2>
+                <h2 className="text-lg font-medium text-gray-800">
+                  {item.title}
+                </h2>
                 <p className="text-sm text-gray-500">{item.description}</p>
               </div>
               <button

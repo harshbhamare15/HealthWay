@@ -8,8 +8,14 @@ const WaitingPeriod = () => {
     { title: "Emergency Cases", time: "Immediate (within 5–10 minutes)" },
     { title: "Walk-in Patients", time: "Seen in order of arrival" },
     { title: "Pre-booked Appointments", time: "Given priority" },
-    { title: "Senior Citizens / Differently-abled", time: "Priority lane available" },
-    { title: "Admission Waiting Time", time: "2–6 hours (based on bed availability)" },
+    {
+      title: "Senior Citizens / Differently-abled",
+      time: "Priority lane available",
+    },
+    {
+      title: "Admission Waiting Time",
+      time: "2–6 hours (based on bed availability)",
+    },
     { title: "Lab Test Sample Collection", time: "Within 15 minutes" },
     { title: "Blood Test Reports", time: "2–4 hours" },
     { title: "X-ray/CT Scan Reports", time: "30–60 minutes" },

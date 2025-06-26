@@ -10,7 +10,6 @@ const LocateHospital = () => {
   const [hospitals, setHospitals] = useState([]);
   const [error, setError] = useState("");
 
-  // ✅ Haversine formula to calculate distance between 2 points
   const getDistanceFromLatLonInKm = (lat1, lon1, lat2, lon2) => {
     const R = 6371; // Radius of the earth in km
     const dLat = ((lat2 - lat1) * Math.PI) / 180;
@@ -116,7 +115,14 @@ const LocateHospital = () => {
                       <div className="text-sm">
                         <p className="font-semibold">{h.tags.name}</p>
                         <p className="text-gray-500">
-                          📏 {getDistanceFromLatLonInKm(position[0], position[1], h.lat, h.lon).toFixed(2)} km away
+                          📏{" "}
+                          {getDistanceFromLatLonInKm(
+                            position[0],
+                            position[1],
+                            h.lat,
+                            h.lon
+                          ).toFixed(2)}{" "}
+                          km away
                         </p>
                         <a
                           href={`https://www.google.com/maps/search/?api=1&query=${h.lat},${h.lon}`}

@@ -95,7 +95,7 @@ const FinalBook = () => {
       clearTimeout(timeoutId);
       controller.abort();
     };
-  }, [showDetails, hospitalName]); // Fixed dependency array
+  }, [showDetails, hospitalName]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -125,7 +125,9 @@ const FinalBook = () => {
       <LeftSidebar />
 
       <div className="min-h-screen px-4 pt-28 max-w-2xl mx-auto">
-        <h1 className="text-3xl font-bold text-teal-700 mb-6">Confirm Appointment</h1>
+        <h1 className="text-3xl font-bold text-teal-700 mb-6">
+          Confirm Appointment
+        </h1>
 
         <div className="mb-4 flex items-center justify-between bg-gray-100 rounded p-4 shadow">
           <div>
@@ -145,7 +147,11 @@ const FinalBook = () => {
             className="text-teal-600 flex items-center gap-1"
           >
             {showDetails ? "Hide Details" : "Show Details"}
-            {showDetails ? <ChevronUpIcon className="w-4 h-4" /> : <ChevronDownIcon className="w-4 h-4" />}
+            {showDetails ? (
+              <ChevronUpIcon className="w-4 h-4" />
+            ) : (
+              <ChevronDownIcon className="w-4 h-4" />
+            )}
           </button>
         </div>
 
@@ -159,19 +165,29 @@ const FinalBook = () => {
               <ul className="list-disc pl-5 space-y-1">
                 {Object.entries(hospitalDetails).map(([key, value]) => (
                   <li key={key}>
-                    <span className="font-medium capitalize">{key.replace(/_/g, " ")}:</span> {value}
+                    <span className="font-medium capitalize">
+                      {key.replace(/_/g, " ")}:
+                    </span>{" "}
+                    {value}
                   </li>
                 ))}
               </ul>
             ) : (
-              <p className="text-gray-500">No extra information available for this hospital.</p>
+              <p className="text-gray-500">
+                No extra information available for this hospital.
+              </p>
             )}
           </div>
         )}
 
-        <form onSubmit={handleSubmit} className="bg-white p-6 rounded shadow space-y-4">
+        <form
+          onSubmit={handleSubmit}
+          className="bg-white p-6 rounded shadow space-y-4"
+        >
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Consultation Type</label>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Consultation Type
+            </label>
             <div className="flex gap-4">
               {["offline", "online"].map((type) => (
                 <label key={type} className="flex items-center gap-1">
@@ -189,7 +205,9 @@ const FinalBook = () => {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Applicant Name</label>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Applicant Name
+            </label>
             <input
               type="text"
               required
@@ -201,7 +219,9 @@ const FinalBook = () => {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Specialization Required</label>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Specialization Required
+            </label>
             <select
               className="border px-3 py-2 rounded w-full"
               value={speciality}
@@ -216,7 +236,9 @@ const FinalBook = () => {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Describe the Issue</label>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Describe the Issue
+            </label>
             <textarea
               rows={4}
               required
@@ -228,7 +250,9 @@ const FinalBook = () => {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Medical History</label>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Medical History
+            </label>
             <textarea
               rows={4}
               className="border px-3 py-2 rounded w-full"

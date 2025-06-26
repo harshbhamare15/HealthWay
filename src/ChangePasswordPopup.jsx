@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 
-function ChangePasswordPopup({ isOpen, onClose, onSubmit, formData, setFormData }) {
+function ChangePasswordPopup({
+  isOpen,
+  onClose,
+  onSubmit,
+  formData,
+  setFormData,
+}) {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [otpSent, setOtpSent] = useState(false);
   const [generatedOtp, setGeneratedOtp] = useState("");
@@ -50,7 +56,9 @@ function ChangePasswordPopup({ isOpen, onClose, onSubmit, formData, setFormData 
         >
           ✕
         </button>
-        <h2 className="text-2xl font-semibold mb-6 text-center">Change Password</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center">
+          Change Password
+        </h2>
 
         <form className="space-y-4" onSubmit={handleFormSubmit}>
           {!otpVerified && (
@@ -154,20 +162,40 @@ function PasswordInput({ label, name, value, onChange }) {
         aria-label="Toggle password visibility"
       >
         {show ? (
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none"
-            viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round"
-              d="M13.875 18.825A10.05 10.05 0 0112 19c-5 0-9.27-3.11-10.5-7.5a10.05 10.05 0 011.875-3.325m3.04-2.54A9.977 9.977 0 0112 4.5c5 0 9.27 3.11 10.5 7.5a10.015 10.015 0 01-4.388 5.775M15 12a3 3 0 11-3-3" />
-            <path strokeLinecap="round" strokeLinejoin="round"
-              d="M3 3l18 18" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M13.875 18.825A10.05 10.05 0 0112 19c-5 0-9.27-3.11-10.5-7.5a10.05 10.05 0 011.875-3.325m3.04-2.54A9.977 9.977 0 0112 4.5c5 0 9.27 3.11 10.5 7.5a10.015 10.015 0 01-4.388 5.775M15 12a3 3 0 11-3-3"
+            />
+            <path strokeLinecap="round" strokeLinejoin="round" d="M3 3l18 18" />
           </svg>
         ) : (
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none"
-            viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round"
-              d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-            <path strokeLinecap="round" strokeLinejoin="round"
-              d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+            />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+            />
           </svg>
         )}
       </button>
